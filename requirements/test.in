@@ -1,0 +1,5 @@
+-r app.in
+
+coverage
+pytest
+pytest-django

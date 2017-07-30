@@ -1,0 +1,9 @@
+-r app.in
+
+Werkzeug
+django-debug-toolbar
+django-extensions
+isort
+pip-tools
+pyOpenSSL
+pygraphviz

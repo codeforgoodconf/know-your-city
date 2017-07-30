@@ -5,5 +5,5 @@
 3. Copy `example.env` to `.env` and modify as needed.
 4. Build the docker images with `make dev-build`.
 5. To start the app, spin up the docker containers with `make dev-up`.
-6. See the app by visiting [http://localhost:8000](http://localhost:8000).
+6. See the app by visiting [https://localhost:8000](https://localhost:8000).
 7. Shut down the app with `make dev-down`.

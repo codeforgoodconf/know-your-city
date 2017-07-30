@@ -8,6 +8,8 @@ services:
       args:
         TINI_VERSION:
     env_file: .env
+    environment:
+      PORT: 8000
     image: kyc/app-dev
     container_name: kyc_app
     command: bin/app-command.sh

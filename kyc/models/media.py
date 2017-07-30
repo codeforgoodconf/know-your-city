@@ -32,8 +32,8 @@ class Media(models.Model):
 
 
 class StoryMedia(Media):
-    story = models.ForeignKey(Story, related_name='story_media')
+    story = models.ForeignKey('Story', related_name='story_media')
 
 
 class CategoryMedia(Media):
-    category = models.ForeignKey(Category, related_name='media_files')
+    category = models.ForeignKey('Category', related_name='media_files')

@@ -1,5 +1,3 @@
-from configurations import values
-
 from .django_overrides import DjangoOverrides
 
 

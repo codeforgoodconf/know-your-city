@@ -6,6 +6,7 @@ from .models import Story
 # Create your views here.
 total_stories = Story.objects.count()
 
+
 class StoryList(View):
     template = 'base.html'
 

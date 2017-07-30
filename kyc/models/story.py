@@ -7,13 +7,19 @@ class Story(models.Model):
     categories = models.ManyToManyField('Category', related_name='categories')
     # place = models.ForeignKey(Place)
 
-    date = models.DateField()  # if this story takes place over a range of time, the date field will act as a start date
-    day_is_relevant = models.BooleanField(default=True)  # if the story started (and possibly ended) on an exact day
-    month_is_relevant = models.BooleanField(default=True)  # if the story started (and possibly ended on an exact month
+    # if this story takes place over a range of time, the date field will act
+    # as a start date
+    date = models.DateField()
+    # if the story started (and possibly ended) on an exact day
+    day_is_relevant = models.BooleanField(default=True)
+    # if the story started (and possibly ended on an exact month
+    month_is_relevant = models.BooleanField(default=True)
 
     end_date = models.DateField(null=True)
-    end_day_is_relevant = models.NullBooleanField(null=True)  # if the story ended on an exact day
-    end_month_is_relevant = models.NullBooleanField(null=True)  # if the story ended on an exact month
+    # if the story ended on an exact day
+    end_day_is_relevant = models.NullBooleanField(null=True)
+    # if the story ended on an exact month
+    end_month_is_relevant = models.NullBooleanField(null=True)
 
     created = models.DateTimeField(editable=False)
     modified = models.DateTimeField(editable=False)

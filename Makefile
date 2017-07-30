@@ -33,5 +33,9 @@ dev-restart: dev-down dev-up dev-ps ## Restart development environment
 dev-shell: ## Start a shell running in the app container
 	docker-compose run --rm app /bin/bash
 
+dev-migrate: ## Migrate the development database
+	docker-compose run --rm app ./manage.py migrate
+
+
 # TODO
 # dev-setup: dev-docker-pull dev-db-restore dev-sync-media

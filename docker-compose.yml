@@ -28,6 +28,7 @@ services:
   # Upstream services
   db:
     image: postgres:9.6
+    container_name: kyc_db
     env_file: .env
     networks:
       - services

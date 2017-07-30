@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  # Primary services
+  app:
+    build:
+      context: .
+      args:
+        TINI_VERSION:
+    env_file: .env
+    image: kyc/app-dev
+    container_name: kyc_app
+    command: bin/app-command.sh
+    depends_on:
+      - db
+    networks:
+      - services
+    volumes:
+      - ./.data/services/ap/bash_history:/root/.bash_history
+      - ./.data/services/app/ipython/:/root/.ipython
+      - ./.data/media:/public/media
+      - .:/app
+    ports:
+      - "8000:8000"
+
+  # Upstream services
+  db:
+    image: postgres:9.6
+    env_file: .env
+    networks:
+      - services
+    volumes:
+      - ./.data/db:/var/lib/postgresql/data
+
+networks:
+  services:

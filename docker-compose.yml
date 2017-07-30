@@ -9,7 +9,7 @@ services:
         TINI_VERSION:
     env_file: .env
     environment:
-      PORT: 8000
+      PORT: ${APP_PORT}
     image: kyc/app-dev
     container_name: kyc_app
     command: bin/app-command.sh
@@ -23,7 +23,7 @@ services:
       - ./.data/media:/public/media
       - .:/app
     ports:
-      - "${DJANGO_PORT}:${DJANGO_PORT}"
+      - "${APP_PORT}:${APP_PORT}"
 
   # Upstream services
   db:

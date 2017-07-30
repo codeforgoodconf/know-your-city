@@ -30,5 +30,8 @@ dev-ps: ## View development environment containers
 
 dev-restart: dev-down dev-up dev-ps ## Restart development environment
 
+dev-shell: ## Start a shell running in the app container
+	docker-compose run --rm app /bin/bash
+
 # TODO
-# dev-setup: dev-docker-pull dev-build dev-up dev-db-restore dev-sync-media dev-ps
+# dev-setup: dev-docker-pull dev-db-restore dev-sync-media

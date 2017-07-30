@@ -21,7 +21,7 @@ services:
       - ./.data/media:/public/media
       - .:/app
     ports:
-      - "8000:8000"
+      - "${DJANGO_PORT}:${DJANGO_PORT}"
 
   # Upstream services
   db:

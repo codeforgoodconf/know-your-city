@@ -1,0 +1,28 @@
+{% extends '../sections/story/base.html' %}
+
+{% block component %}
+    <aside>
+    <div class="media">{{ story.media }}</div>
+    <h4 class="title">{{ story.title }}</h4>
+    <h6 class="author">by {{ story.author }}</h6>
+    <div class="context"></div>
+    <p>{{ story.location }}, {{ story.date }}</p>
+    </aside>
+    <article>
+    {{ story.content }}
+    </article>
+    <aside>
+    <div>More like this
+    <ul>
+        {% for story in stories %}
+        <li>
+            {{ story.media }}
+            {{ story.title }}
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+    <div class="tags"></div>
+    <div class="references"></div>
+    </aside>
+{% endblock %}

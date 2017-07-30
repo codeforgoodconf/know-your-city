@@ -6,6 +6,7 @@
 .venv
 venv/
 ENV/
+env/
 
 # Spyder project settings
 .spyderproject

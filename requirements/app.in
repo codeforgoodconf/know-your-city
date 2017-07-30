@@ -1,1 +1,4 @@
 Django
+django-configurations
+psycopg2
+python-dotenv

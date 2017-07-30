@@ -2,4 +2,4 @@
 set -e
 
 make install-dev-requirements
-exec ./manage.py runserver "0.0.0.0:${DJANGO_PORT}"
+exec ./manage.py runserver_plus "0.0.0.0:${PORT}" --cert /tmp/cert

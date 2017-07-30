@@ -14,7 +14,7 @@ class Story(models.Model):
     end_month_is_relevant = models.NullBooleanField(null=True)  # if the story ended on an exact month
 
 
-    summary = models.CharField()
+    summary = models.CharField(max_length=256)
 
     # media
 
@@ -33,5 +33,3 @@ class Story(models.Model):
         if commit:
             story.save()
         return story
-
-

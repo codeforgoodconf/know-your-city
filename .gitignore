@@ -25,3 +25,6 @@ env/
 .idea
 local.in
 local.txt
+
+*.sqlite3
+

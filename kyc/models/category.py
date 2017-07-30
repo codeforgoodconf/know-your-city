@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 # Create your models here.
 class Category(models.Model):
-    title = models.CharField(max_length=200, required=True)
+    title = models.CharField(max_length=200)
     slug = models.SlugField(null=True, blank=True, editable=False, unique=True)
     description = models.TextField(blank=False, null=False)
 

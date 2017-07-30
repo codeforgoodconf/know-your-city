@@ -11,10 +11,14 @@ The points on the map are managed through the Django admin by KYC volunteers.
 
 The administrative side is a basic Django app backed by PostgreSQL and likely PostGIS.
 
-The front-end should not require a heavy single page app style Javascript
-library; vanilla JS will probably even suffice.
+The front-end will likely be done with React.
 
 The easiest front-end map to use is likely Google Maps.
+
+# Design
+
+Design mostly took place at [Code for Good 2017](http://codeforgood.io/). There we developed a board of [job stories](https://trello.com/b/MxJ36Xzf/kyc-job-stories) and
+some wireframe [mockups](../design-docs/kyc.pdf) of the user UI.
 
 # License
 

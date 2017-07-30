@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block component %}
+
+<article>
+    <div>
+        <ul>
+            <li><button>Nearby</button></li>
+            <li><button>Trendy</button></li>
+            <li><button>Newest</button></li>
+        </ul>
+    </div>
+    <div>Top Stories</div>
+    <ul>
+        {% for story in stories %}
+        <li>
+            {{ story.media }}
+            {{ story.title }}
+        </li>
+        {% endfor %}
+    </ul>
+    <div>Tags</div>
+</article>
+
+{% endblock %}

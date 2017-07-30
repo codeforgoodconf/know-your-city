@@ -18,9 +18,9 @@ class Story(models.Model):
 
     # media
 
-    body = models.CharField()
+    body = models.CharField(max_length=65536)
 
-    references = models.CharField()
+    references = models.CharField(max_length=512)
 
     # author = models.ForeignKey(Author)
     # theme = models.ForeignKey(Theme)

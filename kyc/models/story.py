@@ -1,8 +1,10 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Story(models.Model):
     title = models.CharField(max_length=256, unique=True)
+    categories = models.ManyToManyField('Category', related_name='categories')
     # place = models.ForeignKey(Place)
 
     date = models.DateField()  # if this story takes place over a range of time, the date field will act as a start date
@@ -13,6 +15,8 @@ class Story(models.Model):
     end_day_is_relevant = models.NullBooleanField(null=True)  # if the story ended on an exact day
     end_month_is_relevant = models.NullBooleanField(null=True)  # if the story ended on an exact month
 
+    created = models.DateTimeField(editable=False)
+    modified = models.DateTimeField(editable=False)
 
     summary = models.CharField(max_length=256)
 
@@ -32,4 +36,8 @@ class Story(models.Model):
             story.end_month_is_relevant = None
         if commit:
             story.save()
+        if not self.id:
+            self.created = timezone.now()
+        self.modified = timezone.now()
+
         return story

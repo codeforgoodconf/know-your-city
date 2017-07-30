@@ -1,3 +1,6 @@
+from django.db import models
+from django.utils import timezone
+
 
 def handler(instance, filename):
     # TODO: complete filepath
@@ -30,6 +33,7 @@ class Media(models.Model):
 
 class StoryMedia(Media):
     story = models.ForeignKey(Story, related_name='story_media')
+
 
 class CategoryMedia(Media):
     category = models.ForeignKey(Category, related_name='media_files')

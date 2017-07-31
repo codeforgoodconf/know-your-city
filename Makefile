@@ -1,11 +1,11 @@
 .DEFAULT_GOAL := help
 
+include Makefiles/*.mk
+
 # Generates a help message. Borrowed from https://github.com/pydanny/cookiecutter-djangopackage.
 help: ## Display this help message
-	@echo "Please use \`make <target>' where <target> is one of the following tasks:"
+	@echo "Please use \`make <target>' where <target> is one of the following:"
 	@perl -nle'print $& if m{^[\.a-zA-Z_-]+:.*?## .*$$}' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m  %-25s\033[0m %s\n", $$1, $$2}'
-
-include Makefiles/*.mk
 
 # Tasks to be run in developer shell
 ## Python requirements

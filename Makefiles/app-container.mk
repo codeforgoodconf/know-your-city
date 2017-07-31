@@ -1,4 +1,4 @@
-# Tasks to be run inside app Docker container
+# Tasks to be run inside app container
 
 LOCAL_IN = requirements/local.in
 LOCAL_OUT = requirements/local.txt

@@ -1,9 +1,11 @@
-from django.views import View
 from django.shortcuts import render
+from django.views import View
+
 from .models import Story
 
 # Create your views here.
 total_stories = Story.objects.count()
+
 
 class StoryList(View):
     template = 'base.html'

@@ -8,6 +8,8 @@ services:
       args:
         TINI_VERSION:
     env_file: .env
+    environment:
+      PORT: ${APP_PORT}
     image: kyc/app-dev
     container_name: kyc_app
     command: bin/app-command.sh
@@ -21,11 +23,12 @@ services:
       - ./.data/media:/public/media
       - .:/app
     ports:
-      - "8000:8000"
+      - "${APP_PORT}:${APP_PORT}"
 
   # Upstream services
   db:
     image: postgres:9.6
+    container_name: kyc_db
     env_file: .env
     networks:
       - services

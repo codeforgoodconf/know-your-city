@@ -1,25 +1,25 @@
-{% extends '../sections/home/base.html' %}
+    {% extends '../sections/home/base.html' %}
 
-{% block component %}
+    {% block component %}
 
-<article>
-    <div>
+    <article>
+        <div>
+            <ul>
+                <li><button>Nearby</button></li>
+                <li><button>Trendy</button></li>
+                <li><button>Newest</button></li>
+            </ul>
+        </div>
+        <div>Top Stories</div>
         <ul>
-            <li><button>Nearby</button></li>
-            <li><button>Trendy</button></li>
-            <li><button>Newest</button></li>
+            {% for story in stories %}
+            <li>
+                {{ story.media }}
+                {{ story.title }}
+            </li>
+            {% endfor %}
         </ul>
-    </div>
-    <div>Top Stories</div>
-    <ul>
-        {% for story in stories %}
-        <li>
-            {{ story.media }}
-            {{ story.title }}
-        </li>
-        {% endfor %}
-    </ul>
-    <div class="tags"></div>
-</article>
+        <div class="tags"></div>
+    </article>
 
-{% endblock %}
+    {% endblock %}

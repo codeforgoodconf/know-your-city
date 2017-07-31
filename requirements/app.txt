@@ -4,9 +4,7 @@
 #
 #    pip-compile --output-file requirements/app.txt requirements/app.in
 #
-click==6.7                # via python-dotenv
 django-configurations==2.0
 django==1.11.3
 psycopg2==2.7.3
-python-dotenv==0.6.4
 pytz==2017.2              # via django
